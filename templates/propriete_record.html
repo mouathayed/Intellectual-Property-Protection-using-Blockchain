@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Records Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 50px;
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        th {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: normal;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Patient Records Viewer</h1>
+    <table>
+        <tr>
+            <th>Timestamp</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>UID</th>
+            <th>Date </th>
+            <th>Hash</th>
+            <th>Previous Hash</th>
+          </tr>
+        {% for record in all_records %}
+        <tr>
+            <td>{{ record.timestamp }}</td>
+            <td>{{ record.name }}</td>
+            <td>{{ record.author}}</td>
+            <td>{{ record.uid }}</td>
+            <td>{{ record.date }}</td>
+            <td>{{ record.hash }}</td>
+            <td>{{ record.previous_hash }}</td>
+          </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
